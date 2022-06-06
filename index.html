@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>macOS Calculator</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+<body>
+  <div class="container">
+    <div class="calculator">
+      <div class="display-screen">
+        <input type="text" class="output" id="test" value="0" />
+      </div>
+
+      <div class="buttons">
+        <table>
+          <tr class="group">
+            <td><button class="btn clear text-white btn-top" value="all-clear" onclick="btn(this)">AC</button></td>
+            <td><button class="btn text-white btn-top" value="opposite" onclick="btn(this)">+/-</button></td>
+            <td><button class="btn text-white btn-top" value="percent" onclick="btn(this)">%</button></td>
+            <td><button class="btn text-white btn-operator" value="divide" onclick="btn(this)">+</button></td>
+          </tr>
+          <tr class="group">
+            <td><button class="btn text-white btn-number" value="7" onclick="btn(this)">7</button></td>
+            <td><button class="btn text-white btn-number" value="8" onclick="btn(this)">8</button></td>
+            <td><button class="btn text-white btn-number" value="9" onclick="btn(this)">9</button></td>
+            <td><button class="btn text-white secondary btn-operator" value="multiply" onclick="btn(this)">*</button></td>
+          </tr>
+          <tr class="group">
+            <td><button class="btn text-white btn-number" value="4" onclick="btn(this)">4</button></td>
+            <td><button class="btn text-white btn-number" value="5" onclick="btn(this)">5</button></td>
+            <td><button class="btn text-white btn-number" value="6" onclick="btn(this)">6</button></td>
+            <td><button class="btn text-white secondary btn-operator" value="subtract" onclick="btn(this)">-</button></td>
+          </tr>
+          <tr class="group">
+            <td><button class="btn text-white btn-number" value="1" onclick="btn(this)">1</button></td>
+            <td><button class="btn text-white btn-number" value="2" onclick="btn(this)">2</button></td>
+            <td><button class="btn text-white btn-number" value="3" onclick="btn(this)">3</button></td>
+            <td><button class="btn text-white secondary btn-operator" value="add" onclick="btn(this)">+</i></button></td>
+          </tr>
+          <tr class="group">
+            <td colspan="2"><button class="btn btn0 text-white btn-number btn-zero" value="0" onclick="btn(this)">0</button></td>
+            <!-- <button class="btn" >0</button> -->
+            <td><button class="btn btn1 text-white btn-number period" value="." onclick="btn(this)">.</button></td>
+            <td><button class="btn btn1 text-white secondary btn-operator" value="equals" onclick="btn(this)">=</button></td>
+          </tr>
+        </table>
+    </div>
+  </div>
+
+  </div>
+
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  <!--Javascript-->
+  <script src="js/script.js"></script>
+
+
+</body>
+
+</html>
+
