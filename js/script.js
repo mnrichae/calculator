@@ -58,6 +58,16 @@ function equals() {
   }
 }
 
+function allClear() {
+  currDisplay = null;
+  prevDisplay = null;
+  operator = null;
+  results = null;
+  floatNumber = false;
+  endResult = false;
+  display("0");
+}
+
 function btn(op1) {
   let promptOperand = op1.getAttribute("value"); //prompt operand
 
@@ -135,7 +145,7 @@ function btn(op1) {
         default:
             document.getElementsByClassName("clear")[0].innerHTML = "C";
             document.getElementsByClassName("clear")[0].setAttribute("value", "clear");
-            (currDisplay == null) ? currDisplay = promptOperand : currDisplay += myValue;
+            (currDisplay == null) ? currDisplay = promptOperand : currDisplay += promptOperand;
             display(currDisplay);
             break;
 
