@@ -1,0 +1,133 @@
+/*calculator final*/
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* a {
+  text-decoration: none;
+  color: #fff;
+} */
+
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgba(39,29,43,.8);
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-items: center;
+  padding: 0px;
+}
+
+.calculator {
+  position: relative;
+  height: auto;
+  width: 240px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px;
+  background-color: rgba(42,33,48,0.5);
+}
+
+
+/*display screen*/
+
+.display-screen {
+  height: 100px;
+  padding-left: 10px;
+  padding-right: 5px;
+
+}
+
+#display {
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  font-size: 30px;
+  overflow-x: scroll;
+  overflow: hidden;
+}
+
+input[type="text"] {
+  width: 100%;
+  height: 70px;
+  margin: 25px auto 0px auto;
+  padding: 0 20px 3px 0;
+  box-sizing: border-box;
+  font-size: 26pt;
+  text-align: right;
+  background-color: rgb(60, 54, 66);
+  color: white;
+  border: none;
+}
+
+button {
+  height: 60px;
+  width: 60px;
+  border: 0;
+  font-size: 20px;
+}
+
+/*top buttons*/
+.calculator button.btn-top {
+  background-color: rgba(101, 76, 102, 0.3);
+  border: 1px solid rgba(40,42,61,0.5);
+}
+
+button.btn-top:active{
+  background-color: rgba(94,87,101,0.5) !important;
+}
+  
+
+/*numbers*/
+.calculator button.btn-number {
+  background-color: rgba(94,87,101,0.5);
+  border: 1px solid rgba(40,42,61,0.5);
+}
+
+button.btn-number:active {
+  background-color: rgba(179,166,175,.5) !important;
+}
+
+.btn-zero{
+  width: 100% !important;
+  border-bottom-left-radius: 20px;
+}
+
+
+
+/*operators*/
+.calculator button.btn-operator {
+  background-color: rgb(243, 156, 44);
+  border: 1px solid rgba(40,42,61,0.5);
+}
+
+.btn-operator:active{
+  background-color: rgba(187,120,34,0.8) !important;
+}
+
+.btn-operator:focus, .btn-operator:visited {
+  border: 2px solid rgba(48, 38, 47) !important;
+}
+
+.btn-equal {
+  background-color: rgb(243, 156, 44);
+  border-bottom-right-radius: 20px;
+}
+
+.btn-equal:active{
+  background-color: rgba(187,120,34,0.8) !important;
+}
+
+.btn-equal:active {
+  background-color: rgb(243, 156, 44);
+  border-bottom-right-radius: 20px;
+}
