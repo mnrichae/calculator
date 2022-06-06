@@ -16,13 +16,15 @@ function logicFlow(op1){
     prevDisplay = results;
     currDisplay = null;
     display(results);
+    //from 0 
   } else if(prevDisplay == null && currDisplay != null && operator == null){
       operator = op1;
       prevDisplay = currDisplay;
       currDisplay = null;
       display(prevDisplay);
   } else if(prevDisplay == null && currDisplay == null && operator == null){
-    display("0");
+    // display("0");
+    allClear();
   } 
  
 }
@@ -69,9 +71,9 @@ function allClear() {
 }
 
 function btn(op1) {
-  let promptOperand = op1.getAttribute("value"); //prompt operand
+  let promptButton = op1.getAttribute("value"); //prompt operand
 
-  switch (promptOperand){
+  switch (promptButton){
         case "all-clear":
             currDisplay = null;
             prevDisplay = null;
@@ -89,8 +91,8 @@ function btn(op1) {
             results = null;
             floatNumber = false;
             endResult = false;
-            document.getElementsByClassName("clear")[0].innerHTML = "AC";
-            document.getElementsByClassName("clear")[0].setAttribute("value", "all-clear"); //to move to AC
+            document.getElementsByClassName("clear")[0].innerHTML = "AC"; //from C to AC
+            document.getElementsByClassName("clear")[0].setAttribute("value", "all-clear"); 
             display("0");
             break;
 
@@ -114,25 +116,25 @@ function btn(op1) {
 
         case "divide":
             equals();
-            logicFlow(promptOperand);
+            logicFlow(promptButton);
             break;
 
         case "multiply":
             equals();
-            logicFlow(promptOperand);
+            logicFlow(promptButton);
             break;
 
         case "subtract":
             equals();
-            logicFlow(promptOperand);
+            logicFlow(promptButton);
             break;
 
         case "add":
             equals();
-            logicFlow(promptOperand);
+            logicFlow(promptButton);
             break;
 
-
+        //for repetitive operation using equal sign
         case "equals":
             if(prevDisplay != null && currDisplay != null && operator != null){
               results = calculate(prevDisplay, currDisplay, operator);
@@ -143,9 +145,9 @@ function btn(op1) {
             break;
 
         default:
-            document.getElementsByClassName("clear")[0].innerHTML = "C";
+            document.getElementsByClassName("clear")[0].innerHTML = "C"; //from AC to C
             document.getElementsByClassName("clear")[0].setAttribute("value", "clear");
-            (currDisplay == null) ? currDisplay = promptOperand : currDisplay += promptOperand;
+            (currDisplay == null) ? currDisplay = promptButton : currDisplay += promptButton;
             display(currDisplay);
             break;
 
