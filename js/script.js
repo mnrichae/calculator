@@ -10,26 +10,30 @@ function display(newDisplay){
 
 //logic flow of calculator operations
 function logicFlow(op1){
+  //continuous operation from an operant
   if(prevDisplay != null && currDisplay != null && operator != null){
     results = calculate(prevDisplay, currDisplay, operator);
     operator = op1;
     prevDisplay = results;
     currDisplay = null;
     display(results);
+    console.log("logicFlow first if")
     //from 0 
   } else if(prevDisplay == null && currDisplay != null && operator == null){
       operator = op1;
       prevDisplay = currDisplay;
       currDisplay = null;
       display(prevDisplay);
+      console.log("logicFlow second if")
   } else if(prevDisplay == null && currDisplay == null && operator == null){
     // display("0");
-    allClear();
+    // allClear();
+      console.log("logicFlow third if")
   } 
- 
+ console.log("function logicFlow successful")
 }
 
-//basic calculation using operators
+//basic calculation using operators called inside logicFlow()
 function calculate(op1, op2, operator){
   switch (operator) {
         case "divide":
@@ -47,7 +51,6 @@ function calculate(op1, op2, operator){
   }
 }
 
-//
 function equals() {
   if(endResult){
     currDisplay = results;
@@ -57,18 +60,10 @@ function equals() {
     floatNumber  = null;
     endResult = false;
     display(currDisplay);
-  }
+  } 
+  console.log("function equals successful")
 }
 
-function allClear() {
-  currDisplay = null;
-  prevDisplay = null;
-  operator = null;
-  results = null;
-  floatNumber = false;
-  endResult = false;
-  display("0");
-}
 
 function btn(op1) {
   let promptButton = op1.getAttribute("value"); //prompt operand
@@ -85,9 +80,9 @@ function btn(op1) {
             break;
 
         case "clear":
-            currDisplay = null;
-            // prevDisplay = null;
-            // operator = null;
+            currDisplay = null; // <--only current display is affected
+            // prevDisplay = null; <-- prev display will not be affected
+            // operator = null; <-- prev operator will not be affect
             results = null;
             floatNumber = false;
             endResult = false;
@@ -105,7 +100,7 @@ function btn(op1) {
             }
             break;
 
-        case "opposite":
+        case "posneg":
             if(results != null){
               display(results *= -1);
             } else
@@ -130,18 +125,26 @@ function btn(op1) {
             break;
 
         case "add":
-            equals();
+            // equals();
             logicFlow(promptButton);
             break;
+            console.log("case add");
 
-        //for repetitive operation using equal sign
         case "equals":
             if(prevDisplay != null && currDisplay != null && operator != null){
               results = calculate(prevDisplay, currDisplay, operator);
               prevDisplay = results;
               display(results);
               endResult = true;
-            } 
+              currDisplay = null;
+              prevDisplay = null;
+              operator = null;
+              results = null;
+              floatNumber = false;
+              endResult = false;
+              console.log("case equals first if")
+            }
+            console.log("case equals successful")
             break;
 
         default:
